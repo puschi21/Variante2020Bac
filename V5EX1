@@ -1,0 +1,23 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int baza(int n)
+{
+    int vmax=0;
+    while(n)
+    {
+        if(n%10>vmax)
+            vmax=n%10;
+        n=n/10;
+    }
+    vmax+=1;
+    return vmax;
+}
+
+int main()
+{
+    int n=50731;
+    cout<<baza(n);
+}
