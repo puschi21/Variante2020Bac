@@ -1,0 +1,21 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    char s[101],*p;
+    int k=0;
+    cin.get(s,101);
+    p=strtok(s," ");
+    while(p!=NULL)
+    {
+        if(strchr("0123456789",p[0])!=NULL)
+            if(strchr(p,',')==NULL)
+                k++;
+        p=strtok(NULL," ");
+    }
+    cout<<k;
+    return 0;
+}
