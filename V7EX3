@@ -1,0 +1,32 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream f("bac.txt");
+
+int s,smin,x;
+
+int main()
+{
+    f>>x;
+    s=smin=x;
+    while(f>>x)
+    {
+        if(x+s<x && s+x<smin)
+            s=s+x;
+        else
+            if(s<smin)
+            {
+                smin=s;
+                s=x;
+            }
+        else
+            s=x;
+    }
+    if(s<smin)
+        smin=s;
+    cout<<smin;
+    f.close();
+    return 0;
+}
