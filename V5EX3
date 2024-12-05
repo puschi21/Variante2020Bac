@@ -1,0 +1,31 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream f("bac.txt");
+
+int n,s,smax,ok=1;
+
+int main()
+{
+    while(f>>n)
+    {
+        if(s+n>=n && ok==1 && s+n>=smax)
+            s+=n;
+        else
+        {
+            ok=0;
+            if(s>smax)
+                smax=s;
+        }
+        if(ok==0)
+        {
+            s=n;
+            ok=1;
+        }
+    }
+    if(s>smax)
+        smax=s;
+    cout<<smax;
+}
