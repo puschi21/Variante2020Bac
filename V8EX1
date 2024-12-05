@@ -1,0 +1,29 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int suma(int n)
+{
+    int s=0,d=2,p;
+    while(n!=1)
+    {
+        p=0;
+        while(n%d==0)
+        {
+            p++;
+            n/=10;
+        }
+        if(p!)
+            s+=d;
+        d++;
+    }
+    return s;
+}
+
+int main()
+{
+    int n=12;
+    cout<<suma(n);
+    return 0;
+}
