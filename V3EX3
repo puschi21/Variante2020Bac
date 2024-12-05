@@ -1,0 +1,28 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream fin("bac.in");
+
+int pl, p2, nr, ok, x;
+
+int main()
+{
+    while (fin >> x)
+    {
+        nr++;
+        if (x < 0 && ok == 0)
+        {
+            pl = nr;
+            ok = 1;
+        }
+        else if (x < 0 && ok == 1)
+            p2 = nr;
+    }
+    if (nr - pl + 1 > p2)
+        cout << nr - pl + 1;
+    else
+        cout << p2;
+    return 0;
+}
