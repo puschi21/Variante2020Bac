@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+int putere(int n, int p)
+{
+    int d=2,k;
+    while(n!=1)
+    {
+        k=0;
+        while(n%d==0)
+        {
+            k++;
+            n/=d;
+        }
+        if(k!=0 && d==p)
+            return k;
+        else
+            d++;
+    }
+    return -1;
+}
+
+int main()
+{
+    int n=80,p=2;
+    cout<<putere(n,p);
+}
