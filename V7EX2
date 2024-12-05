@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a[20][20],m,n,i,j,k=0;
+    cin>>m>>n;
+    for(i=1;i<=m;i++)
+        for(j=1;j<=n;j++)
+            cin>>a[i][j];
+    for(i=1;i<=m;i++)
+        for(j=1;j<=n;j++)
+            if(a[i][1]==a[j][n])
+            {
+                k++;
+                cout<<a[i][1]<<" ";
+            }
+    if(k==0)
+        cout<<"nepolarizate";
+    return 0;
+}
