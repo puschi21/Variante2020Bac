@@ -1,0 +1,29 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream f("bac.in");
+
+int x,k,maxi;
+
+struct{
+    int nrcit,apcf;
+}v[10];
+
+int main()
+{
+    while(f>>x)
+    {
+        k++;
+        v[x%10].apcf++;
+        v[x%10].nrcit=k;
+        if(maxi<v[x%10].apcf)
+            maxi=v[x%10].apcf;
+    }
+    for(k=0;k<=9;k++)
+        if(maxi==v[k].apcf)
+            cout<<v[k].nrcit<<" ";
+    f.close();
+    return 0;
+}
