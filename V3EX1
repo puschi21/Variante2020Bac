@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int factori(int n, int m)
+{
+    int i=2,nr=0;
+    while(n!=1 && m!=1)
+    {
+        if (n%i==0 && m%i==0)
+        {
+            while(n%i==0)
+                n=n/i;
+            while(m%i==0)
+                m=m/i;
+            nr++;
+        }
+        else
+        {
+            while(n%i==0)
+                n=n/i;
+            while(m%i==0)
+                m=m/i;
+        }
+        i++;
+    }
+    return nr;
+}
+
+int main()
+{
+    int n=750,m=490;
+    cout<<factori(n,m);
+    return 0;
+}
