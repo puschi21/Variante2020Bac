@@ -1,0 +1,31 @@
+#include <iostream>
+//#include <fstream>
+
+using namespace std;
+
+//ifstream f("date.in");
+
+void produs(int n, int &p)
+{
+    int v[10]={};
+    p=1;
+    while(n)
+    {
+        if(n%2==0)
+            v[n%10]=1;
+        n/=10;
+    }
+    for(int i=0;i<=8;i++)
+        if(v[i]==1)
+            p*=i;
+    if(p==1)
+        p=-1;
+}
+
+int main()
+{
+    int p;
+    produs(1622325,p);
+    cout<<p;
+    return 0;
+}
