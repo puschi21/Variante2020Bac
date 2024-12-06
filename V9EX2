@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    int n,i,ok=0;
+    char cuv[20][20];
+    cin>>n;
+    for(i=0;i<n;i++)
+        cin>>cuv[i];
+    for(i=0;i<n-1;i++)
+    {
+        if(strstr(cuv[i],cuv[n-1])==cuv[i])
+        {
+            cout<<cuv[i]<<" ";
+            ok=1;
+        }
+    }
+    if(!ok)
+        cout<<"nu exista";
+}
