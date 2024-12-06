@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int suma (int n, int s) {
+    int a[10]={0};
+    s=0;
+    while(n>10)
+    {
+        if(n%10%2==0 && a[n%10]!=1)
+        {
+            s=s+n%10;
+            a[n%10]=1;
+        }
+        n=n/10;
+    }
+    return s;
+}
+
+int main()
+{
+    int n=48,s;
+    cout<<suma(n,s);
+}
